@@ -7,6 +7,7 @@ export interface Slide {
   title: string;
   description: string;
   image: string;
+  pagename: string;
 }
 
 @IonicPage()
@@ -17,6 +18,7 @@ export interface Slide {
 export class TutorialPage {
   slides: Slide[];
   showSkip = true;
+  menupages: any;
   dir: string = 'ltr';
 
   constructor(public navCtrl: NavController, public menu: MenuController, translate: TranslateService, public platform: Platform) {
@@ -29,32 +31,35 @@ export class TutorialPage {
       "TUTORIAL_SLIDE3_DESCRIPTION",
     ]).subscribe(
       (values) => {
-        console.log('Loaded values', values);
+        
         this.slides = [
           {
-            title: values.TUTORIAL_SLIDE1_TITLE,
+            title: 'Revisa tus consultas',
             description: values.TUTORIAL_SLIDE1_DESCRIPTION,
             image: 'assets/img/ica-slidebox-img-1.png',
+            pagename: 'historial',
           },
           {
-            title: values.TUTORIAL_SLIDE2_TITLE,
+            title: 'Haz una consulta',
             description: values.TUTORIAL_SLIDE2_DESCRIPTION,
             image: 'assets/img/ica-slidebox-img-2.png',
-          },
-          {
-            title: values.TUTORIAL_SLIDE3_TITLE,
-            description: values.TUTORIAL_SLIDE3_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-3.png',
+            pagename: 'lista',
           }
         ];
       });
   }
 
-  startApp() {
-    this.navCtrl.setRoot('WelcomePage', {}, {
+  startApp(page_target) {
+
+    this.menupages = {
+      historial: 'HistorialPage',
+      lista:'ListMasterPage',
+    };
+    this.navCtrl.setRoot(this.menupages[page_target], {}, {
       animate: true,
       direction: 'forward'
     });
+
   }
 
   onSlideChangeStart(slider) {
