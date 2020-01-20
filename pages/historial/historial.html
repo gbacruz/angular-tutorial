@@ -10,6 +10,27 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let appointment of currentAppointments">
+      <button ion-item >
+        <ion-avatar item-start>
+          <ion-icon name="calendar"></ion-icon>
+        </ion-avatar>
+        <h2>{{appointment.name}}</h2>
+        <p>Inició: {{appointment.start}}</p>
+        <p>fanalizó: {{appointment.end}}</p>
+        <ion-note item-end *ngIf="appointment.note">{{appointment.note}}</ion-note>
+      </button>
+
+      <ion-item-options>
+        <button ion-button color="danger">
+          Remove
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
 
 </ion-content>

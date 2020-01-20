@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, ModalController } from 'ionic-angular';
+
+import { Appointment } from '../../models/appointment';
+import { Appointments } from '../../providers';
+import { Items } from '../../providers';
+
+
 
 /**
  * Generated class for the HistorialPage page.
@@ -14,8 +20,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'historial.html',
 })
 export class HistorialPage {
+  currentAppointments: Appointment[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public appointments: Appointments, public modalCtrl: ModalController) {
+    this.currentAppointments = this.appointments.query();
   }
 
   ionViewDidLoad() {
