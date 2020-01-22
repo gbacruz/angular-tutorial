@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="pop()">&nbsp;</button>
+  </ion-buttons>
+    <ion-title>{{appointment.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="item-detail" padding>
+    <h2>{{appointment.name}}</h2>
+    <p>{{appointment.start}}</p>
+    <p>{{appointment.end}}</p>
+  </div>
+
+  <ion-item>
+    <ion-label>Sintomas</ion-label>
+    <ion-badge slot="end">12</ion-badge>
+  </ion-item>
+    
+    <ion-list>
+      <ion-item-sliding *ngFor="let symptom of appointment.symptoms">
+        <div ion-item>
+          <ion-avatar item-start>
+            <ion-icon name="body"></ion-icon>
+          </ion-avatar>
+          <h2>{{symptom.synp}}</h2>
+          <p>{{symptom.zone}}</p>
+          <p>{{symptom.indicator}}</p>
+          <p>{{symptom.desc}}</p>
+        </div>
+  
+      </ion-item-sliding>
+    </ion-list>
+  
+    <ion-item>
+      <ion-label>Signals</ion-label>
+      <ion-badge slot="end">12</ion-badge>
+    </ion-item>
+    
+
+    <ion-list>
+      <ion-item-sliding *ngFor="let signal of appointment.signals">
+        <div ion-item>
+          <ion-avatar item-start>
+            <ion-icon name="pulse"></ion-icon>
+          </ion-avatar>
+          <h2>{{signal.element}}</h2>
+          <p>{{signal.measure}} {{signal.units}}</p>
+          <p>{{signal.time}}</p>
+        </div>
+  
+      </ion-item-sliding>
+    </ion-list>
+
+    <ion-item>
+      <ion-label>Diagnostico</ion-label>
+      <ion-badge slot="end">12</ion-badge>
+    </ion-item>
+    <ion-item-sliding>
+      <div ion-item>
+        <ion-avatar item-start>
+          <ion-icon name="heart-empty"></ion-icon>
+        </ion-avatar>
+        <p>{{appointment.diagnosis}}</p>
+      </div>
+
+    </ion-item-sliding>
+
+    <ion-item>
+      <h2>Medicación</h2>
+    </ion-item>
+
+    <ion-list>
+      <ion-item-sliding *ngFor="let medicine of appointment.medication">
+        <div ion-item>
+          <ion-avatar item-start>
+            <ion-icon name="flask"></ion-icon>
+          </ion-avatar>
+          <h2>{{medicine.medicine}}</h2>
+          <p>{{medicine.units}}  / {{medicine.frecuency}}</p>
+          <p>{{medicine.temporal}}</p>
+        </div>
+  
+      </ion-item-sliding>
+    </ion-list>
+
+
+
+</ion-content>

@@ -30,4 +30,11 @@ export class HistorialPage {
     console.log('ionViewDidLoad HistorialPage');
   }
 
+  openAppointment(appointment:Appointment){
+    this.navCtrl.push('AppointmentDetailPage', {
+      appointment: appointment
+    });
+  }
+
+
 }

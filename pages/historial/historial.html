@@ -14,7 +14,7 @@
 
   <ion-list>
     <ion-item-sliding *ngFor="let appointment of currentAppointments">
-      <button ion-item >
+      <button ion-item (click)="openAppointment(appointment);">
         <ion-avatar item-start>
           <ion-icon name="calendar"></ion-icon>
         </ion-avatar>
