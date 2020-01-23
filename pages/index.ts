@@ -7,6 +7,7 @@ export const MainPage = 'TabsPage';
 export const TutorialPage = 'TutorialPage';
 export const HistorialPage = 'HistorialPage';
 export const AppointmentDetailPage = 'AppointmentDetailPage';
+export const NewAppointmentPage = 'NewAppointmentPage';
 
 // The initial root pages for our tabs (remove if not using tabs)
 export const Tab1Root = 'ListMasterPage';

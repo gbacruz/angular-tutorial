@@ -34,17 +34,18 @@ export class TutorialPage {
         
         this.slides = [
           {
-            title: 'Revisa tus consultas',
-            description: values.TUTORIAL_SLIDE1_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-1.png',
-            pagename: 'historial',
-          },
-          {
             title: 'Haz una consulta',
             description: values.TUTORIAL_SLIDE2_DESCRIPTION,
             image: 'assets/img/ica-slidebox-img-2.png',
             pagename: 'lista',
+          },
+          {
+            title: 'Revisa tus consultas',
+            description: values.TUTORIAL_SLIDE1_DESCRIPTION,
+            image: 'assets/img/ica-slidebox-img-1.png',
+            pagename: 'historial',
           }
+
         ];
       });
   }
@@ -53,7 +54,7 @@ export class TutorialPage {
 
     this.menupages = {
       historial: 'HistorialPage',
-      lista:'ListMasterPage',
+      lista:'NewAppointmentPage',
     };
     this.navCtrl.setRoot(this.menupages[page_target], {}, {
       animate: true,

@@ -3,17 +3,6 @@ import { IonicPage, NavController, ModalController } from 'ionic-angular';
 
 import { Appointment } from '../../models/appointment';
 import { Appointments } from '../../providers';
-import { Items } from '../../providers';
-
-
-
-/**
- * Generated class for the HistorialPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-historial',
@@ -34,6 +23,10 @@ export class HistorialPage {
     this.navCtrl.push('AppointmentDetailPage', {
       appointment: appointment
     });
+  }
+
+  newAppointment(){
+    this.navCtrl.push('NewAppointmentPage');
   }
 
 

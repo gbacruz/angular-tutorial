@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only>&nbsp;</button>
+  </ion-buttons>
+    <ion-title>Nueva Consulta : {{newAppointment.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <h1>{{newAppointment.name}}</h1>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">MM/DD/YYYY</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" min="2020-01-01" max="2020-12-30" value="2002-09-23T15:03:46.789"></ion-datetime>
+  </ion-item>
+  
+
+  <ion-list>
+    <ion-item-sliding >
+      <div ion-item>
+        <ion-avatar item-start>
+          <ion-icon name="body"></ion-icon>
+        </ion-avatar>
+        <h2>Sintomas</h2>
+      </div>
+    </ion-item-sliding>
+  </ion-list>
+
+
+
+  <ion-list>
+    <ion-item-sliding >
+      <div ion-item>
+        <ion-avatar item-start>
+          <ion-icon name="pulse"></ion-icon>
+        </ion-avatar>
+        <h2>Signals</h2>
+      </div>
+    </ion-item-sliding>
+  </ion-list>
+
+
+
+</ion-content>

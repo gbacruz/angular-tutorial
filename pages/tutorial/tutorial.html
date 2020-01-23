@@ -1,12 +1,3 @@
-<ion-header no-shadow>
-  <ion-navbar>
-    <ion-buttons end *ngIf="showSkip">
-      <button ion-button (click)="startApp('lista')" color="primary">
-        <ion-icon name="md-medkit" style="font-size:40px;"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
 
 <ion-content no-bounce>
   <ion-slides pager="true" dir="{{dir}}" (ionSlideWillChange)="onSlideChangeStart($event)">
@@ -16,9 +7,7 @@
       <p [innerHTML]="slide.description"></p>
       <button ion-button icon-end large clear (click)="startApp(slide.pagename)">
         {{ 'TUTORIAL_CONTINUE_BUTTON' | translate }}
-        <ion-icon name="arrow-forward"></ion-icon>
       </button>
     </ion-slide>
-
   </ion-slides>
 </ion-content>

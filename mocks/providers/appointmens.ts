@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Appointment } from '../../models/appointment';
 
 @Injectable()
