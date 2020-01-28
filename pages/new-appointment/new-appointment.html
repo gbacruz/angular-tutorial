@@ -5,6 +5,8 @@
   </ion-buttons>
     <ion-title>Nueva Consulta : {{newAppointment.name}}</ion-title>
   </ion-navbar>
+
+
 </ion-header>
 
 <ion-content>
@@ -24,9 +26,27 @@
           <ion-icon name="body"></ion-icon>
         </ion-avatar>
         <h2>Sintomas</h2>
+        <ion-icon name="add-circle" (click)="addItem();" style="cursor: pointer;"></ion-icon>
       </div>
     </ion-item-sliding>
   </ion-list>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let symptom of newAppointment.symptoms">
+      <div ion-item>
+        <ion-avatar item-start>
+          <ion-icon name="body"></ion-icon>
+        </ion-avatar>
+        <h2>{{symptom.synp}}</h2>
+        <p>{{symptom.zone}}</p>
+        <p>{{symptom.indicator}}</p>
+        <p>{{symptom.desc}}</p>
+      </div>
+
+    </ion-item-sliding>
+  </ion-list>
+
+
 
 
 
@@ -37,10 +57,25 @@
           <ion-icon name="pulse"></ion-icon>
         </ion-avatar>
         <h2>Signals</h2>
+        <ion-icon name="add-circle" (click)="addSignal();" style="cursor: pointer;"></ion-icon>
       </div>
     </ion-item-sliding>
   </ion-list>
 
 
+  <ion-list>
+    <ion-item-sliding *ngFor="let signal of newAppointment.signals">
+      <div ion-item>
+        <ion-avatar item-start>
+          <ion-icon name="pulse"></ion-icon>
+        </ion-avatar>
+        <h2>{{signal.element}}</h2>
+        <p>{{signal.measure}} {{signal.units}}</p>
+        <p>{{signal.time}}</p>
+      </div>
+
+    </ion-item-sliding>
+  </ion-list>  
+  
 
 </ion-content>
