@@ -7,12 +7,16 @@
 <ion-header>
   <ion-navbar>
     <ion-title>create_symptom</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="cancel()">
+        <span color="primary" showWhen="ios">&nbsp;</span>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
   </ion-navbar>
-  <ion-buttons end>
-    <button ion-button (click)="done()" >
-      <ion-icon name="md-checkmark" showWhen="core,android,windows"></ion-icon>
-    </button>
-  </ion-buttons>
 
 
 </ion-header>
@@ -21,14 +25,39 @@
 
   <form *ngIf="form" [formGroup]="form">
     <ion-list>
+      
       <ion-item>
-        <ion-input type="text" placeholder="" formControlName="name"></ion-input>
+        <ion-input type="text" placeholder="Sintoma" formControlName="synp"></ion-input>
       </ion-item>
+
       <ion-item>
-        <ion-input type="text" placeholder="" formControlName="about"></ion-input>
+        <ion-input type="text" placeholder="Zona" formControlName="zone"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-range min="0" max="100"  color="warning" pin="true" ticks="true" snaps="true" formControlName="intensity">
+          <ion-label slot="10" step="1">Leve</ion-label>
+          <ion-label slot="30" step="2">Moderado</ion-label>
+          <ion-label slot="50" step="3">Intenso</ion-label>
+          <ion-label slot="100" step="4" >Muy Intenso</ion-label>
+        </ion-range>
+      </ion-item>
+    
+      <ion-item>
+        <ion-input type="text" placeholder="Indicador" formControlName="indicator"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Descripción" formControlName="desc"></ion-input>
+      </ion-item>
+
     </ion-list>
   </form>
 
+  <ion-buttons end>
+    <button ion-button (click)="done()" >
+      <ion-icon name="md-checkmark" showWhen="core,android,windows"></ion-icon>
+    </button>
+  </ion-buttons>
 
 </ion-content>

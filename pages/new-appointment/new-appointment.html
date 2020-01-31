@@ -10,14 +10,22 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <h1>{{newAppointment.name}}</h1>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">MM/DD/YYYY</ion-label>
-    <ion-datetime displayFormat="MM/DD/YYYY" min="2020-01-01" max="2020-12-30" value="2002-09-23T15:03:46.789"></ion-datetime>
-  </ion-item>
-  
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="1">
+        <ion-avatar item-start>
+          <ion-icon name="contact" style="font-size: 3rem;"></ion-icon>        
+        </ion-avatar>
+        <p><ion-icon name="brush" (click)="addPatient();"></ion-icon></p>
+      </ion-col>
+      <ion-col size="6"><h1>{{newAppointment.patient.name}}</h1></ion-col>
+      <ion-col>
+        <p>{{newAppointment.patient.age}}</p>
+        <p>{{newAppointment.patient.gender}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-list>
     <ion-item-sliding >
@@ -27,6 +35,7 @@
         </ion-avatar>
         <h2>Sintomas</h2>
         <ion-icon name="add-circle" (click)="addItem();" style="cursor: pointer;"></ion-icon>
+        
       </div>
     </ion-item-sliding>
   </ion-list>
@@ -46,10 +55,6 @@
     </ion-item-sliding>
   </ion-list>
 
-
-
-
-
   <ion-list>
     <ion-item-sliding >
       <div ion-item>
@@ -57,7 +62,7 @@
           <ion-icon name="pulse"></ion-icon>
         </ion-avatar>
         <h2>Signals</h2>
-        <ion-icon name="add-circle" (click)="addSignal();" style="cursor: pointer;"></ion-icon>
+        <ion-icon name="add-circle" (click)="addSignal();" style="cursor: pointer;" end></ion-icon>
       </div>
     </ion-item-sliding>
   </ion-list>
@@ -69,9 +74,9 @@
         <ion-avatar item-start>
           <ion-icon name="pulse"></ion-icon>
         </ion-avatar>
-        <h2>{{signal.element}}</h2>
+        <h2>{{signal.elemento}}</h2>
         <p>{{signal.measure}} {{signal.units}}</p>
-        <p>{{signal.time}}</p>
+        <p>{{signal.time_signal}}</p>
       </div>
 
     </ion-item-sliding>
