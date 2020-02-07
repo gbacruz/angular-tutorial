@@ -36,13 +36,13 @@ export class TutorialPage {
           {
             title: 'Haz una consulta',
             description: values.TUTORIAL_SLIDE2_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-2.png',
+            image: 'assets/img/unouno.jpg',
             pagename: 'lista',
           },
           {
             title: 'Revisa tus consultas',
             description: values.TUTORIAL_SLIDE1_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-1.png',
+            image: 'assets/img/dosdos.jpg',
             pagename: 'historial',
           }
 
