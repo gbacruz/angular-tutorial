@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
-
 import { User } from '../../providers';
 import { TutorialPage } from '../';
 import { MedicHomePage } from '../';
@@ -19,7 +18,7 @@ export class LoginPage {
   users: any;
   pagelog: any;
   account: { email: string, password: string } = {
-    email: 'test@example.com',
+    email: 'medico',
     password: 'test'
   };
 
@@ -60,6 +59,7 @@ export class LoginPage {
       //this.navCtrl.push(TutorialPage);
     }, (err) => {
       if(this.users[this.account.email]){
+        var a = this.loginErrorString;
         var profilep = this.users[this.account.email].profile;
         var pagego = this.pagelog[profilep];
         this.navCtrl.push(pagego);

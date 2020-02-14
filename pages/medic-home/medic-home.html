@@ -6,10 +6,26 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>medic/home</ion-title>
+    <ion-buttons end>
+      <ion-badge color="danger" style="margin-right:20px;">Pendientes 6</ion-badge>
+      <button ion-button (click)="logOut();">x</button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let appointment of myappointments">
+      <button ion-item >
+        <ion-avatar item-start>
+          <ion-icon name="calendar"></ion-icon>
+        </ion-avatar>
+        <h2>{{appointment.patient.name}}</h2>
+        <p>Inició: {{appointment.start}}</p>
+        <p>fanalizó: {{appointment.end}}</p>
+      </button>
+
+    </ion-item-sliding>
+  </ion-list>
 
 </ion-content>
